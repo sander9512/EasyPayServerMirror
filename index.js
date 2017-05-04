@@ -16,14 +16,15 @@ var connection = mysql.createConnection({
 connection.connect();
 
 app.get('/', function(request, response) {
-    connection.query('SELECT * from t_users', function(err, rows, fields) {
-        if (err) {
-            console.log('error: ', err);
-            throw err;
-        }
-        response.send(['Hello World!!!! HOLA MUNDO!!!!', rows]);
-        console.log(rows);
-    });
+    res.json({"hallo": "dit is een bericht"})
+    // connection.query('SELECT * from klant', function(err, rows, fields) {
+    //     if (err) {
+    //         console.log('error: ', err);
+    //         throw err;
+    //     }
+    //     response.send(['Hello World!!!! HOLA MUNDO!!!!', rows]);
+    //     // console.log(rows);
+    // });
 });
 
 var port = process.env.PORT || 5000;
