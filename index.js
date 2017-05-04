@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 app.get('/', function(request, response) {
-    res.json({"hallo": "dit is een bericht"})
+    response.json({"hallo": "dit is een bericht"})
     // connection.query('SELECT * from klant', function(err, rows, fields) {
     //     if (err) {
     //         console.log('error: ', err);
