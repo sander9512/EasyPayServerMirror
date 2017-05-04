@@ -22,7 +22,7 @@ app.get('/', function(request, response) {
             throw err;
         }
 
-        response.json({"hallo": "dit is een bericht"})
+        response.json({"hallo": "dit is een bericht. Dus het werkt nu gewoon."});
         response.send(['Hello World!!!! Hallo wereld!!!!', rows]);
     });
 });
