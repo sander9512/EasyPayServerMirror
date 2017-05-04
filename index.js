@@ -22,6 +22,7 @@ app.get('/', function(request, response) {
             throw err;
         }
         response.send(['Hello World!!!! HOLA MUNDO!!!!', rows]);
+        console.log(rows);
     });
 });
 
