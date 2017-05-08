@@ -4,10 +4,10 @@ var app = express();
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-    host : 'localhost',
-    user : 'root',
-    password : '',
-    database : 'easypaydb'
+    host : 'eu-cdbr-west-01.cleardb.com',
+    user : 'bf45754e8eb79a',
+    password : 'cc63c676',
+    database : 'heroku_05fdd2a232b52ba'
 });
 
 connection.connect();
