@@ -16,20 +16,13 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-app.use('/api/product', require('./routes/routes_api_product'));
-
-app.use('/api/klant', require('./routes/routes_api_klant'));
-
-app.use('/api/kassamedewerker', require('./routes/routes_api_kassamedewerker'));
-
-app.use('/api/bestelling', require('./routes/routes_api_bestelling'));
-
-app.use('/api/transactie', require('./routes/routes_api_transactie'));
-
-app.get('*', function (request, response) {
-    response.status(404);
-    response.json({
-        "description": "404 - Not Found"
+app.get('/', function(request, response) {
+    connection.query('SELECT * from product', function(err, rows, fields) {
+        if (err) {
+            console.log('error: ', err);
+            throw err;
+        }
+        response.send([rows]);
     });
 });
 
@@ -38,5 +31,3 @@ var port = process.env.PORT || 5000;
 app.listen(port, function() {
     console.log("Listening on " + port + "...");
 });
-
-module.exports = app;
