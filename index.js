@@ -17,7 +17,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 app.get('/', function(request, response) {
-    connection.query('SELECT * from klant', function(err, rows, fields) {
+    connection.query('SELECT * from product', function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
             throw err;
