@@ -22,8 +22,6 @@ app.get('/', function(request, response) {
             console.log('error: ', err);
             throw err;
         }
-
-        response.json({"hallo": "dit is een bericht. Dus het werkt nu gewoon."});
         response.send([rows]);
     });
 });
