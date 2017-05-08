@@ -4,6 +4,7 @@
 
 var express = require('express');
 var mysql = require('mysql');
+var router = express.Router();
 var app = express();
 
 var connection = mysql.createConnection({
@@ -21,7 +22,7 @@ app.use('/api/klant', require('./routes/routes_api_klant'));
 
 app.use('/api/kassamedewerker', require('./routes/routes_api_kassamedewerker'));
 
-// app.use('/api/bestelling', require('./routes/routes_api_bestelling'));
+app.use('/api/bestelling', require('./routes/routes_api_bestelling'));
 
 app.use('/api/transactie', require('./routes/routes_api_transactie'));
 
