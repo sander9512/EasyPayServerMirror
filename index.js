@@ -7,14 +7,14 @@ var mysql = require('mysql');
 var router = express.Router();
 var app = express();
 
-var connection = mysql.createConnection({
+var connection = mysql.createPool({
     host : 'eu-cdbr-west-01.cleardb.com',
     user : 'bf45754e8eb79a',
     password : 'cc63c676',
     database : 'heroku_05fdd2a232b52ba'
 });
 
-connection.connect();
+connection.getConnection();
 
 app.use('/api/product', require('./routes/routes_api_product'));
 
@@ -35,13 +35,6 @@ app.get('/', function(request, response) {
         response.send([rows]);
     });
 });
-
-// app.get('*', function (request, response) {
-//     response.status(404);
-//     response.json({
-//         "description": "404 - Not Found"
-//     });
-// });
 
 var port = process.env.PORT || 5000;
 
