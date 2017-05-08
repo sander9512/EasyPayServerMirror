@@ -8,10 +8,12 @@ var router = express.Router();
 var app = express();
 
 var connection = mysql.createPool({
+    connectionLimit : 10,
     host : 'eu-cdbr-west-01.cleardb.com',
     user : 'bf45754e8eb79a',
     password : 'cc63c676',
-    database : 'heroku_05fdd2a232b52ba'
+    database : 'heroku_05fdd2a232b52ba',
+    debug : false
 });
 
 connection.getConnection();
