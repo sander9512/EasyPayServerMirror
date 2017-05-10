@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-app.get(':username', function(request, response) {
+app.get('/:username', function(request, response) {
 
     var username = request.param.username;
 
