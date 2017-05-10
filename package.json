@@ -6,10 +6,13 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "mongodb": "^2.2.26",
     "mysql": ""
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.3.0"
+  },
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1",
     "start": "node index.js"

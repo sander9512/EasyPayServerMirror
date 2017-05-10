@@ -12,6 +12,19 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+app.get(':username', function(request, response) {
+
+    var username = request.param.username;
+
+    connection.query('SELECT * from klant WHERE `Gebruikersnaam` = ' + username + ';', function(err, rows, fields) {
+        if (err) {
+            console.log('error: ', err);
+            throw err;
+        }
+        response.send([rows]);
+    });
+});
+
 app.get('', function(request, response) {
     connection.query('SELECT * from klant', function(err, rows, fields) {
         if (err) {

@@ -7,20 +7,14 @@ var mysql = require('mysql');
 var router = express.Router();
 var app = express();
 
-var connection = mysql.createPool({
+var connection = mysql.createConnection({
     host : 'eu-cdbr-west-01.cleardb.com',
     user : 'bf45754e8eb79a',
     password : 'cc63c676',
     database : 'heroku_05fdd2a232b52ba'
 });
 
-connection.getConnection(function(err) {
-    if (err) {
-        console.log(err.message);
-    } else {
-        console.log("Connection established!");
-    }
-});
+connection.connect();
 
 app.use('/api/product', require('./routes/routes_api_product'));
 
