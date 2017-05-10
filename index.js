@@ -44,7 +44,7 @@ function database(req, res) {
 
 app.use('/api/product', require('./routes/routes_api_product'));
 
-//app.use('/api/klant', require('./routes/routes_api_klant'));
+app.use('/api/klant', require('./routes/routes_api_klant'));
 
 app.use('/api/kassamedewerker', require('./routes/routes_api_kassamedewerker'));
 

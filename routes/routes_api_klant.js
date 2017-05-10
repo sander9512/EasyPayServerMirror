@@ -1,28 +1,74 @@
 //product API
 var express = require('express');
-var app = express();
+var router = express.Router();
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
+var pool = mysql.createPool({
     host : 'eu-cdbr-west-01.cleardb.com',
     user : 'bf45754e8eb79a',
     password : 'cc63c676',
     database : 'heroku_05fdd2a232b52ba'
 });
 
-connection.connect();
-
-app.get('/login:username', function(request, response) {
-
-    var username = request.param.username || '';
-
-    connection.query('SELECT * from klant WHERE `Gebruikersnaam` = ' + username + ';', function(err, rows, fields) {
+function database(req, res) {
+    pool.getConnection(function (err, connection) {
         if (err) {
-            console.log('error: ', err);
-            throw err;
+            console.log('Connection error 1');
         }
-        response.send([rows]);
+
+        console.log('connected as id ' + connection.threadId);
+
+            connection.query('SELECT * from klant', function (err, rows) {
+                connection.release();
+                if (err) {
+                    console.log('error: ', err);
+                    throw err;
+                }
+                res.send([rows]);
+            });
+
+        connection.on('error',
+            function (err) {
+                console.log('Connection error 2');
+            }
+        );
     });
+}
+
+
+
+function databaseusername(res, username) {
+    pool.getConnection(function (err, connection) {
+        if (err) {
+            console.log('Connection error 1');
+        }
+
+        console.log('connected as id ' + connection.threadId);
+        console.log("Gebruikersnaam: " + username);
+
+        connection.query("SELECT * from klant WHERE `Gebruikersnaam` = '" + username + "'", function(err, rows, fields) {
+            if (err) {
+                console.log('error: ', err);
+                throw err;
+            }
+            res.send([rows]);
+        });
+
+        connection.on('error',
+            function (err) {
+                console.log('Connection error 2');
+            }
+        );
+    });
+}
+
+router.get('/login/:username?', function(request, response) {
+
+    var username = request.params.username || '';
+
+    databaseusername(response,username);
+
+
 });
 
 // router.get('/recipes/:number', function (req, res) {
@@ -34,14 +80,8 @@ app.get('/login:username', function(request, response) {
 //     res.json(recipe);
 // });
 
-app.get('', function(request, response) {
-    connection.query('SELECT * from klant', function(err, rows, fields) {
-        if (err) {
-            console.log('error: ', err);
-            throw err;
-        }
-        response.send([rows]);
-    });
+router.get('', function(request, response) {
+    database(request,response)
 });
 
-module.exports = app;
+module.exports = router;
