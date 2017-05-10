@@ -29,7 +29,7 @@ function database(req, res) {
                 console.log('error: ', err);
                 throw err;
             }
-            res.send(rows);
+            res.send({"items" : rows});
         });
 
         connection.on('error',
