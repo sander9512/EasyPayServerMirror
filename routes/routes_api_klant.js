@@ -12,9 +12,9 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-app.get('/:username', function(request, response) {
+app.get('/login:username', function(request, response) {
 
-    var username = request.param.username;
+    var username = request.param.username || '';
 
     connection.query('SELECT * from klant WHERE `Gebruikersnaam` = ' + username + ';', function(err, rows, fields) {
         if (err) {
@@ -24,6 +24,15 @@ app.get('/:username', function(request, response) {
         response.send([rows]);
     });
 });
+
+// router.get('/recipes/:number', function (req, res) {
+//     res.status(200);
+//
+//     var number = req.params.number || '';
+//     var recipe = recipes[number - 1];
+//
+//     res.json(recipe);
+// });
 
 app.get('', function(request, response) {
     connection.query('SELECT * from klant', function(err, rows, fields) {
