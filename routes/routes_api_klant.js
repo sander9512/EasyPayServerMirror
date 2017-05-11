@@ -132,4 +132,46 @@ router.put('/id=:customerid?/bank=:bankrekening?', function (req, res) {
     })
 });
 
+router.post('/voornaam=:first?/achternaam=:last?/gebruikersnaam=:username?/wachtwoord=:password?', function (req, res) {
+
+    //Got to fix this!
+    // var email = req.query.email || '';
+    // var bank = req.query.bank || '';
+
+    var first = req.params.first || '';
+    var last = req.params.last || '';
+    var username = req.params.username || '';
+    var password = req.params.password || '';
+
+    var queryStr;
+
+    if(email && bank) {
+        queryStr = "INSERT INTO klant (`Gebruikersnaam`, `Wachtwoord`, `Email`, `Voornaam`, `Achternaam`, `Bankrekeningnummer`, `Saldo` ,`TimeLog`)" +
+            "VALUES ('"+ username +"', '"+ password +"', '"+ email +"', '"+ first +"', '"+ last +"', '"+ bank+ "', '0.00', '00-00-00');"
+    }if(email){
+        queryStr = "INSERT INTO klant (`Gebruikersnaam`, `Wachtwoord`, `Email`, `Voornaam`, `Achternaam`, `Saldo` ,`TimeLog`)" +
+            "VALUES ('"+ username +"', '"+ password +"', '"+ email +"', '"+ first +"', '"+ last +"', '0.00', '00-00-00');"
+    }if(bank){
+        queryStr = "INSERT INTO klant (`Gebruikersnaam`, `Wachtwoord`, `Voornaam`, `Achternaam`, `Bankrekeningnummer`, `Saldo` ,`TimeLog`)" +
+            "VALUES ('"+ username +"', '"+ password +"', '"+ first +"', '"+ last +"', '"+ bank+ "', '0.00', '00-00-00');"
+    }else{
+        queryStr = "INSERT INTO klant (`Gebruikersnaam`, `Wachtwoord`, `Voornaam`, `Achternaam`, `Saldo` ,`TimeLog`)" +
+            "VALUES ('"+ username +"', '"+ password +"', '"+ first +"', '"+ last +"', '0.00', '00-00-00');"
+    }
+
+    connector.getConnection( function (err, connection) {
+        if (err){
+            console.log(err);
+        }else {
+            connection.query(queryStr, function (err, rows) {
+                if(err){
+                    console.log(err);
+                }else{
+                    res.send('INSERTED!')
+                }
+            })
+        }
+    })
+});
+
 module.exports = router;
