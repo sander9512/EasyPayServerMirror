@@ -18,7 +18,7 @@ function database(req, res) {
 
         console.log('connected as id ' + connection.threadId);
 
-        connection.query('SELECT * from bestelling', function (err, rows) {
+        connection.query('SELECT * from product', function (err, rows) {
             connection.release();
             if (err) {
                 console.log('error: ', err);
