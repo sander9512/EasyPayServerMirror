@@ -47,5 +47,27 @@ router.get('/', function(req, res) {
     })
 });
 
+router.put('/id=:customerid?&saldo=:amount?&datum=:date?', function (req, res) {
+    var customerid = req.params.customerid;
+    var amount = req.params.amount;
+    var date = req.params.date;
+
+    var queryStr = "UPDATE klant SET Saldo = '" +amount+ "', TimeLog = '" +date+ "' WHERE KlantId=" +customerid;
+
+    connector.getConnection( function (err, connection) {
+        if (err){
+            console.log(err);
+        }else {
+            connection.query(queryStr, function (err, rows) {
+                if(err){
+                    console.log(err);
+                }else{
+                    res.send('UPDATED!')
+                }
+            })
+        }
+    })
+});
+
 
 module.exports = router;
