@@ -111,4 +111,25 @@ router.put('/id=:customerid?/email=:emailadress?', function (req, res) {
     })
 });
 
+router.put('/id=:customerid?/bank=:bankrekening?', function (req, res) {
+    var customerid = req.params.customerid;
+    var bankrekening = req.params.bankrekening;
+
+    var queryStr = "UPDATE klant SET Bankrekeningnummer = '" + bankrekening + "' WHERE KlantId=" + customerid;
+
+    connector.getConnection( function (err, connection) {
+        if (err){
+            console.log(err);
+        }else {
+            connection.query(queryStr, function (err, rows) {
+                if(err){
+                    console.log(err);
+                }else{
+                    res.send('UPDATED!')
+                }
+            })
+        }
+    })
+});
+
 module.exports = router;
