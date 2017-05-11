@@ -1,0 +1,7 @@
+{
+  "dbConnectionLimit" : 10,
+  "dbHost" : "eu-cdbr-west-01.cleardb.com",
+  "dbUser" : "bf45754e8eb79a",
+  "dbPassword" : "cc63c676",
+  "dbDatabase" : "heroku_05fdd2a232b52ba"
+}

@@ -1,88 +1,51 @@
 //product API
 var express = require('express');
 var router = express.Router();
-var mysql = require('mysql');
+var connector = require('../db/db_connector');
 
-var pool = mysql.createPool({
-    host : 'eu-cdbr-west-01.cleardb.com',
-    user : 'bf45754e8eb79a',
-    password : 'cc63c676',
-    database : 'heroku_05fdd2a232b52ba'
+router.get('/login/:username?', function(req, res) {
+    var username = req.params.username || '';
+    var queryStr;
+
+    if (username){
+        queryStr = "SELECT * from klant WHERE `Gebruikersnaam` = '" + username + "'"
+
+        connector.getConnection( function (err, connection) {
+            if (err){
+                console.log(err);
+            }else {
+                connection.query(queryStr, function (err, rows) {
+                    if(err){
+                        console.log(err);
+                    }else{
+                        res.status(200).json({"items" : rows})
+                    }
+                })
+            }
+        })
+    } else {
+        res.status(404).send("Please use api/klant/login/USERNAME")
+    }
 });
 
-function database(req, res) {
-    pool.getConnection(function (err, connection) {
-        if (err) {
-            console.log('Connection error 1');
-        }
+router.get('/', function(req, res) {
 
-        console.log('connected as id ' + connection.threadId);
+    var queryStr = 'SELECT * from klant';
 
-            connection.query('SELECT * from klant', function (err, rows) {
-                connection.release();
-                if (err) {
-                    console.log('error: ', err);
-                    throw err;
+    connector.getConnection( function (err, connection) {
+        if (err){
+            console.log(err);
+        }else {
+            connection.query(queryStr, function (err, rows) {
+                if(err){
+                    console.log(err);
+                }else{
+                    res.status(200).json({"items" : rows})
                 }
-
-                res.send({"items" : rows});
-            });
-
-        connection.on('error',
-            function (err) {
-                console.log('Connection error 2');
-            }
-        );
-    });
-}
-
-
-
-function databaseusername(res, username) {
-    pool.getConnection(function (err, connection) {
-        if (err) {
-            console.log('Connection error 1');
+            })
         }
-
-        console.log('connected as id ' + connection.threadId);
-        console.log("Gebruikersnaam: " + username);
-
-        connection.query("SELECT * from klant WHERE `Gebruikersnaam` = '" + username + "'", function(err, rows, fields) {
-            if (err) {
-                console.log('error: ', err);
-                throw err;
-            }
-            res.send({"items" : rows});
-        });
-
-        connection.on('error',
-            function (err) {
-                console.log('Connection error 2');
-            }
-        );
-    });
-}
-
-router.get('/login/:username?', function(request, response) {
-
-    var username = request.params.username || '';
-
-    databaseusername(response,username);
-
-
+    })
 });
 
-// router.get('/recipes/:number', function (req, res) {
-//     res.status(200);
-//
-//     var number = req.params.number || '';
-//     var recipe = recipes[number - 1];
-//
-//     res.json(recipe);
-// });
-
-router.get('', function(request, response) {
-    database(request,response)
-});
 
 module.exports = router;
