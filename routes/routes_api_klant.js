@@ -90,5 +90,25 @@ router.put('/id=:customerid?/wachtwoord=:password?', function (req, res) {
     })
 });
 
+router.put('/id=:customerid?/email=:emailadress?', function (req, res) {
+    var customerid = req.params.customerid;
+    var emailadress = req.params.emailadress;
+
+    var queryStr = "UPDATE klant SET Email = '" + emailadress + "' WHERE KlantId=" + customerid;
+
+    connector.getConnection( function (err, connection) {
+        if (err){
+            console.log(err);
+        }else {
+            connection.query(queryStr, function (err, rows) {
+                if(err){
+                    console.log(err);
+                }else{
+                    res.send('UPDATED!')
+                }
+            })
+        }
+    })
+});
 
 module.exports = router;
