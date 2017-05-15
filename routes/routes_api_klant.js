@@ -171,7 +171,7 @@ router.put('/signup/:firstname/:lastname/:username/:password/:email/:banknumber'
         query = "INSERT INTO Klant VALUES('NULL', '" + username + "', '" + password + "', '" + email + "', '" + firstname + "', '" + lastname + "', '" + banknumber + "', 0, NOW());"
     }
 
-    connector.createPool(function (err, connection) {
+    connector.getConnection(function (err, connection) {
         if (err) {
             console.log(err);
         } else {
