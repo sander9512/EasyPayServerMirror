@@ -180,12 +180,11 @@ router.put('/signup/:firstname/:lastname/:username/:password/:email/:banknumber'
                 if (err) {
                     console.log(err);
                 } else {
-                    res.send('UPDATED!');
+                    res.send('NEW CUSTOMER CREATED!');
                 }
             })
         }
     })
-
 });
 
 module.exports = router;
