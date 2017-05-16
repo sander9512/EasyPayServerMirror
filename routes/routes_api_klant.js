@@ -159,15 +159,15 @@ router.put('/signup/:firstname/:lastname/:username/:password/:email/:banknumber'
 
     //no email and banknumber input
     if (!email && !banknumber) {
-        query = "INSERT INTO Klant VALUES('NULL', '" + username + "', '" + password + "', 'NULL', '" + firstname + "', '" + lastname + "', 'NULL', 0, NOW());"
+        query = "INSERT INTO Klant VALUES('NULL', '" + username + "', '" + password + "', NULL, '" + firstname + "', '" + lastname + "', NULL, 0, NOW());"
 
         //only no email input
     } else if (!email && banknumber) {
-        query = "INSERT INTO Klant VALUES('NULL', '" + username + "', '" + password + "', 'NULL', '" + firstname + "', '" + lastname + "', '" + banknumber + "', 0, NOW());"
+        query = "INSERT INTO Klant VALUES('NULL', '" + username + "', '" + password + "', NULL, '" + firstname + "', '" + lastname + "', '" + banknumber + "', 0, NOW());"
 
         //only no banknumber input
     } else if (email && !banknumber) {
-        query = "INSERT INTO Klant VALUES('NULL', '" + username + "', '" + password + "', '" + email + "', '" + firstname + "', '" + lastname + "', 'NULL', 0, NOW());"
+        query = "INSERT INTO Klant VALUES('NULL', '" + username + "', '" + password + "', '" + email + "', '" + firstname + "', '" + lastname + "', NULL, 0, NOW());"
 
         //every field filled in
     } else if (email && banknumber) {
