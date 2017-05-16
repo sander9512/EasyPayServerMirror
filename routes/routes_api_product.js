@@ -4,7 +4,7 @@ var router = express.Router();
 var connector = require('../db/db_connector');
 
 router.get('/food', function(req, res) {
-    var queryStr = 'SELECT * from product WHERE `Categorie`=`Eten`'
+    var queryStr = 'SELECT * from product WHERE Categorie = "Eten"'
 
     connector.getConnection( function (err, connection) {
         if(err){
