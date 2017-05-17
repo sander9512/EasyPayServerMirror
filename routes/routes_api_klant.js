@@ -146,8 +146,6 @@ router.put('/id=:customerid?/bank=:bankrekening?', function (req, res) {
 //sign up customer feature
 router.put('/signup/:firstname/:lastname/:username/:password/:email/:banknumber', function (req, res) {
 
-    res.writeHead(200, {'Content-Type' : 'application/x-www-form-urlencoded'});
-
     var firstname = req.params.firstname;
     var lastname = req.params.lastname;
     var username = req.params.username;
@@ -183,7 +181,7 @@ router.put('/signup/:firstname/:lastname/:username/:password/:email/:banknumber'
                 if (err) {
                     console.log(err);
                 } else {
-                    res.send('NEW CUSTOMER CREATED!');
+                    res.send('NEW CUSTOMER CREATED!')
                 }
             })
         }
