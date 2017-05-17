@@ -188,4 +188,31 @@ router.put('/signup/:firstname/:lastname/:username/:password/:email?/:banknumber
     })
 });
 
+//login feature
+router.delete('/delete/:id?', function (req, res) {
+    var id = req.params.id || '';
+    var queryStr;
+
+    if (id) {
+        queryStr = "DELETE from klant WHERE `KlantId` = '" + id + "'"
+
+        connector.getConnection(function (err, connection) {
+            if (err) {
+                console.log(err);
+            } else {
+                connection.query(queryStr, function (err, rows) {
+                    connection.release();
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        res.status(200).send('DELETED')
+                    }
+                })
+            }
+        })
+    } else {
+        res.status(404).send("CANT DELETE")
+    }
+});
+
 module.exports = router;
