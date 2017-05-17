@@ -144,7 +144,7 @@ router.put('/id=:customerid?/bank=:bankrekening?', function (req, res) {
 });
 
 //sign up customer feature
-router.put('/signup/:firstname/:lastname/:username/:password/:email/:banknumber', function (req, res) {
+router.put('/signup/:firstname/:lastname/:username/:password/:email?/:banknumber?', function (req, res) {
 
     var firstname = req.params.firstname;
     var lastname = req.params.lastname;
@@ -154,8 +154,6 @@ router.put('/signup/:firstname/:lastname/:username/:password/:email/:banknumber'
     var banknumber = req.params.banknumber;
 
     var query = '';
-
-    console.log(firstname+"/"+lastname+"/"+username+"/"+password+"/"+email+"/"+banknumber);
 
     //no email, no banknumber input
     if (!email && !banknumber) {
