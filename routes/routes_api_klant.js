@@ -155,7 +155,9 @@ router.put('/signup/:firstname/:lastname/:username/:password/:email/:banknumber'
 
     var query = '';
 
-    //no email and banknumber input
+    console.log(firstname+"/"+lastname+"/"+username+"/"+password+"/"+email+"/"+banknumber);
+
+    //no email, no banknumber input
     if (!email && !banknumber) {
         query = "INSERT INTO Klant VALUES('NULL', '" + username + "', '" + password + "', NULL, '" + firstname + "', '" + lastname + "', NULL, 0, NOW());"
 
