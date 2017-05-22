@@ -143,7 +143,7 @@ router.put('/id=:customerid?/bank=:bankrekening?', function (req, res) {
     })
 });
 
-//sign up customer feature
+//sign up customer feature (create account)
 router.put('/signup/:firstname/:lastname/:username/:password/:email?/:banknumber?', function (req, res) {
 
     var firstname = req.params.firstname;
@@ -186,6 +186,33 @@ router.put('/signup/:firstname/:lastname/:username/:password/:email?/:banknumber
             })
         }
     })
+});
+
+//signup customer feature (check usernames)
+router.get('/signup/:username?', function (req, res) {
+    var username = req.params.username || '';
+    var queryStr;
+
+    if (username) {
+        queryStr = "SELECT username from klant WHERE `Gebruikersnaam` = '" + username + "'"
+
+        connector.getConnection(function (err, connection) {
+            if (err) {
+                console.log(err);
+            } else {
+                connection.query(queryStr, function (err, rows) {
+                    connection.release();
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        res.status(200).json({"items": rows})
+                    }
+                })
+            }
+        })
+    } else {
+        res.status(404).send("Please use api/klant/login/USERNAME")
+    }
 });
 
 module.exports = router;
