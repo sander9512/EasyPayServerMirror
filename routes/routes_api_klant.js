@@ -3,6 +3,27 @@ var express = require('express');
 var router = express.Router();
 var connector = require('../db/db_connector');
 
+//default endpoint gets all customers
+router.get('/', function (req, res) {
+
+    var queryStr = 'SELECT * from klant';
+
+    connector.getConnection(function (err, connection) {
+        if (err) {
+            console.log(err);
+        } else {
+            connection.query(queryStr, function (err, rows) {
+                connection.release();
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.status(200).json({"items": rows})
+                }
+            })
+        }
+    })
+});
+
 //login feature
 router.get('/login/:username?', function (req, res) {
     var username = req.params.username || '';
@@ -30,24 +51,31 @@ router.get('/login/:username?', function (req, res) {
     }
 });
 
-router.get('/', function (req, res) {
+//signup customer feature (check usernames)
+router.get('/signup/:username?', function (req, res) {
+    var username = req.params.username || '';
+    var queryStr;
 
-    var queryStr = 'SELECT * from klant';
+    if (username) {
+        queryStr = "SELECT username from klant WHERE `Gebruikersnaam` = '" + username + "'";
 
-    connector.getConnection(function (err, connection) {
-        if (err) {
-            console.log(err);
-        } else {
-            connection.query(queryStr, function (err, rows) {
-                connection.release();
-                if (err) {
-                    console.log(err);
-                } else {
-                    res.status(200).json({"items": rows})
-                }
-            })
-        }
-    })
+        connector.getConnection(function (err, connection) {
+            if (err) {
+                console.log(err);
+            } else {
+                connection.query(queryStr, function (err, rows) {
+                    connection.release();
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        res.status(200).json({"items": rows})
+                    }
+                })
+            }
+        })
+    } else {
+        res.status(404).send("Please use api/klant/login/USERNAME")
+    }
 });
 
 //change balance feature
@@ -188,13 +216,13 @@ router.put('/signup/:firstname/:lastname/:username/:password/:email?/:banknumber
     })
 });
 
-//signup customer feature (check usernames)
-router.get('/signup/:username?', function (req, res) {
-    var username = req.params.username || '';
+//delete feature
+router.delete('/delete/:id?', function (req, res) {
+    var id = req.params.id || '';
     var queryStr;
 
-    if (username) {
-        queryStr = "SELECT username from klant WHERE `Gebruikersnaam` = '" + username + "'"
+    if (id) {
+        queryStr = "DELETE from klant WHERE `KlantId` = '" + id + "'";
 
         connector.getConnection(function (err, connection) {
             if (err) {
@@ -205,13 +233,13 @@ router.get('/signup/:username?', function (req, res) {
                     if (err) {
                         console.log(err);
                     } else {
-                        res.status(200).json({"items": rows})
+                        res.status(200).send('DELETED')
                     }
                 })
             }
         })
     } else {
-        res.status(404).send("Please use api/klant/login/USERNAME")
+        res.status(404).send("CANT DELETE")
     }
 });
 
