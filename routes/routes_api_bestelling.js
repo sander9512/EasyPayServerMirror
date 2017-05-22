@@ -33,7 +33,7 @@ router.get('/:orderNumber?', function (req, res) {
 
 router.get('/check/available/ordernumber', function(req, res) {
 
-    var query = "SELECT (bestellingNummer +1) FROM bestelling ORDER BY bestellingNummer DESC LIMIT 1";
+    var query = "SELECT (bestellingNummer +1) AS nextAvailableOrderNumber FROM bestelling ORDER BY bestellingNummer DESC LIMIT 1";
 
     connector.getConnection(function (err, connection) {
         if (err) {
