@@ -4,7 +4,7 @@ var router = express.Router();
 var connector = require('../db/db_connector');
 
 //default get endpoint to show all orders, or a specific order when orderNumber is given
-router.get(':orderNumber?', function (req, res) {
+router.get('/:orderNumber?', function (req, res) {
 
     var orderNumber = req.params.orderNumber;
     var query = "";
@@ -53,7 +53,8 @@ router.get('/check/available/ordernumber', function(req, res) {
 
 router.put('/update/:orderNumber', function (req, res) {
 
-    var query = "UPDATE bestelling SET `status` = 'PAID' WHERE `bestellingNummer` =" + orderNumber + "';";
+    var orderNumber = req.params.orderNumber;
+    var query = "UPDATE bestelling SET Status = 'PAID' WHERE BestellingNummer = " + orderNumber + ";";
 
     connector.getConnection(function (err, connection) {
         if (err) {
