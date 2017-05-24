@@ -16,6 +16,10 @@ app.use('/api/bestelling', require('./routes/routes_api_bestelling'));
 
 app.use('/api/transactie', require('./routes/routes_api_transactie'));
 
+app.use('/api/assortiment', require('./routes/routes_api_assortiment'))
+
+app.use('/api/locatie', require('./routes/routes_api_locatie'))
+
 app.get('/', function(req, res) {
 
     var queryStr = "SELECT * from product";
