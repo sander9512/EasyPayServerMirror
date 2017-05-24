@@ -20,6 +20,8 @@ app.use('/api/assortiment', require('./routes/routes_api_assortiment'))
 
 app.use('/api/locatie', require('./routes/routes_api_locatie'))
 
+app.use('/api/error', require('./routes/routes_api_error'));
+
 app.get('/', function(req, res) {
 
     var queryStr = "SELECT * from product";
