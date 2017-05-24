@@ -53,22 +53,22 @@ router.get('/check/available/ordernumber', function(req, res) {
 });
 
 //create new order feature
-router.put('/new/:klantId/:productId/:bestellingnummer', function(req, res) {
+router.put('/new/:klantId/:productId/:bestellingNummer', function(req, res) {
 
 
     var klantId = req.params.klantId;
     var productId = req.params.productId;
     // var locatie = req.params.locatie;
     // var prijs = req.params.prijs;
-    var bestellingnummer = req.params.bestellingnummer;
+    var bestellingNummer = req.params.bestellingNummer;
 
-    var query = "INSERT INTO bestelling (NULL, "+klantId+", "+productId+", 'WAITING', "+bestellingnummer+";";
+    var query = "INSERT INTO bestelling VALUES (NULL, "+klantId+", "+productId+", 'WAITING', "+bestellingNummer+");";
 
     connector.getConnection(function(err, connection) {
         if (err) {
             console.log(err);
         } else {
-            connction.query(query, function(err, rows) {
+            connection.query(query, function(err, rows) {
                 connection.release();
                 if (err) {
                     console.log(err);
