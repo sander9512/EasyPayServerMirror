@@ -57,6 +57,31 @@ router.get('/frisdrank', function(req, res) {
     });
 });
 
+router.put('/addproduct/:productName/:productPrice/:category', function (req, res) {
+
+    var productName     = req.params.productName;
+    var productPrice    = req.params.productPrice;
+    var category        = req.params.category;
+
+    var queryAddProduct = 'INSERT INTO product (ProductNaam, Prijs, Categorie) VALUES (' + productName + ',' + productPrice + ',' + category + ')';
+
+    connector.getConnection(function (err, connection) {
+        if (err) {
+            console.log(err);
+        } else {
+            connection.query(queryAddProduct, function (err, rows) {
+                connection.release();
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.send('NEW PRODUCT CREATED!')
+                }
+            })
+        }
+    })
+
+});
+
 router.get('*', function(req, res) {
     var queryStr = 'SELECT * from product'
 
