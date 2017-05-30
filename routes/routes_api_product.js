@@ -50,7 +50,8 @@ router.get('/frisdrank', function(req, res) {
                 if (err){
                     console.log(err)
                 }else{
-                    res.status(200).json({"items" : rows}, "TEST");
+                    res.status(200).json({"items" : rows});
+                    res.send('TESTEN!');
                 }
             });
         }
