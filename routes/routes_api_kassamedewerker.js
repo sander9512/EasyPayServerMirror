@@ -46,7 +46,7 @@ router.get('/login/:username?', function (req, res) {
             }
         })
     } else {
-        res.status(404).send("Please use api/klant/login/USERNAME")
+        res.status(404).send("Please use api/kassamedewerker/login/USERNAME")
     }
 });
 
@@ -75,6 +75,75 @@ router.get('/getcustomer/:customerid?', function (req, res) {
     } else {
         res.status(404).send("Please put in a correct customer id")
     }
+});
+
+//change emailadress feature
+router.put('/id=:employeeid?/email=:emailadress?', function (req, res) {
+    var employeeid = req.params.employeeid;
+    var emailadress = req.params.emailadress;
+
+    var queryStr = "UPDATE kassamedewerker SET Email = '" + emailadress + "' WHERE KassamedewerkerId=" + employeeid;
+
+    connector.getConnection(function (err, connection) {
+        if (err) {
+            console.log(err);
+        } else {
+            connection.query(queryStr, function (err, rows) {
+                connection.release();
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.send('UPDATED!')
+                }
+            })
+        }
+    })
+});
+
+//change bank account number feature
+router.put('/id=:employeeid?/bank=:bankrekening?', function (req, res) {
+    var employeeid = req.params.employeeid;
+    var bankrekening = req.params.bankrekening;
+
+    var queryStr = "UPDATE kassamedewerker SET Bankrekeningnummer = '" + bankrekening + "' WHERE KassamedewerkerId=" + employeeid;
+
+    connector.getConnection(function (err, connection) {
+        if (err) {
+            console.log(err);
+        } else {
+            connection.query(queryStr, function (err, rows) {
+                connection.release();
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.send('UPDATED!')
+                }
+            })
+        }
+    })
+});
+
+//change hours worked feature
+router.put('/id=:employeeid?/hours=:hoursWorked?', function (req, res) {
+    var employeeid = req.params.employeeid;
+    var hoursWorked = req.params.hoursWorked;
+
+    var queryStr = "UPDATE kassamedewerker SET UrenGewerkt = '" + hoursWorked + "' WHERE KassamedewerkerId=" + employeeid;
+
+    connector.getConnection(function (err, connection) {
+        if (err) {
+            console.log(err);
+        } else {
+            connection.query(queryStr, function (err, rows) {
+                connection.release();
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.send('UPDATED!')
+                }
+            })
+        }
+    })
 });
 
 module.exports = router;
