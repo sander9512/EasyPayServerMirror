@@ -13,6 +13,7 @@ router.put('/add_error/:deviceSDK?/:device?/:model?/:product?/:error?', function
 
     connection.query('INSERT INTO error_data(deviceSDK,device,model,product,error) VALUES( "' + [deviceSDK] + '","' + [device] + '","' + [model] + '","' + [product] + '","' + [error] + '");',
         function (error, rows, fields) {
+            connection.release;
             if (error) {
                 res.status(400).json(error);
             } else {
