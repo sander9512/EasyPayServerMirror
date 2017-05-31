@@ -8,20 +8,13 @@ router.get('/', function (req, res) {
 
     query = "SELECT * FROM `assortiment`"
 
-    connector.getConnection(function (err, connection) {
-        if (err) {
-            console.log(err);
-        } else {
-            connection.query(query, function (err, rows) {
-                connection.release();
+            connector.query(query, function (err, rows) {
                 if (err) {
                     console.log(err);
                 } else {
                     res.status(200).json({"items": rows})
                 }
             })
-        }
-    })
 });
 
 
