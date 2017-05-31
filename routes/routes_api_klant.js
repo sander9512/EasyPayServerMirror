@@ -9,6 +9,7 @@ router.get('/', function (req, res) {
     var queryStr = 'SELECT * from klant';
 
     connector.query(queryStr, function (err, rows) {
+        connector.release;
                 if (err) {
                     console.log(err);
                 } else {
@@ -26,6 +27,7 @@ router.get('/login/:username?', function (req, res) {
         queryStr = "SELECT * from klant WHERE `Gebruikersnaam` = '" + username + "'"
 
                 connector.query(queryStr, function (err, rows) {
+                    connector.release;
                     if (err) {
                         console.log(err);
                     } else {
@@ -47,6 +49,7 @@ router.put('/id=:customerid?/saldo=:amount?&datum=:date?', function (req, res) {
     var queryStr = "UPDATE klant SET Saldo = '" + amount + "', TimeLog = '" + date + "' WHERE KlantId=" + customerid;
 
             connector.query(queryStr, function (err, rows) {
+                connector.release;
                 if (err) {
                     console.log(err);
                 } else {
@@ -63,6 +66,7 @@ router.put('/id=:customerid?/wachtwoord=:password?', function (req, res) {
     var queryStr = "UPDATE klant SET Wachtwoord = '" + password + "' WHERE KlantId=" + customerid;
 
             connector.query(queryStr, function (err, rows) {
+                connector.release;
                 if (err) {
                     console.log(err);
                 } else {
@@ -79,6 +83,7 @@ router.put('/id=:customerid?/email=:emailadress?', function (req, res) {
     var queryStr = "UPDATE klant SET Email = '" + emailadress + "' WHERE KlantId=" + customerid;
 
             connector.query(queryStr, function (err, rows) {
+                connector.release;
                 if (err) {
                     console.log(err);
                 } else {
@@ -95,7 +100,7 @@ router.put('/id=:customerid?/bank=:bankrekening?', function (req, res) {
     var queryStr = "UPDATE klant SET Bankrekeningnummer = '" + bankrekening + "' WHERE KlantId=" + customerid;
 
             connector.query(queryStr, function (err, rows) {
-                connection.release();
+                connector.release;
                 if (err) {
                     console.log(err);
                 } else {
@@ -134,6 +139,7 @@ router.put('/signup/:firstname/:lastname/:username/:password/:email?/:banknumber
     }
 
             connector.query(query, function (err, rows) {
+                connector.release;
                 if (err) {
                     console.log(err);
                 } else {
@@ -151,6 +157,7 @@ router.delete('/delete/:id?', function (req, res) {
         queryStr = "DELETE from klant WHERE `KlantId` = '" + id + "'";
 
                 connector.query(queryStr, function (err, rows) {
+                    connector.release;
                     if (err) {
                         console.log(err);
                     } else {
