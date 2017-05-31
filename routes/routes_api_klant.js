@@ -8,20 +8,13 @@ router.get('/', function (req, res) {
 
     var queryStr = 'SELECT * from klant';
 
-    connector.getConnection(function (err, connection) {
-        if (err) {
-            console.log(err);
-        } else {
-            connection.query(queryStr, function (err, rows) {
-                connection.release();
+    connector.query(queryStr, function (err, rows) {
                 if (err) {
                     console.log(err);
                 } else {
                     res.status(200).json({"items": rows})
                 }
             })
-        }
-    })
 });
 
 //login feature
@@ -32,51 +25,18 @@ router.get('/login/:username?', function (req, res) {
     if (username) {
         queryStr = "SELECT * from klant WHERE `Gebruikersnaam` = '" + username + "'"
 
-        connector.getConnection(function (err, connection) {
-            if (err) {
-                console.log(err);
-            } else {
-                connection.query(queryStr, function (err, rows) {
-                    connection.release();
+                connector.query(queryStr, function (err, rows) {
                     if (err) {
                         console.log(err);
                     } else {
                         res.status(200).json({"items": rows})
                     }
-                })
-            }
         })
     } else {
         res.status(404).send("Please use api/klant/login/USERNAME")
     }
 });
 
-//signup customer feature (check usernames)
-router.get('/signup/:username?', function (req, res) {
-    var username = req.params.username || '';
-    var queryStr;
-
-    if (username) {
-        queryStr = "SELECT username from klant WHERE `Gebruikersnaam` = '" + username + "'";
-
-        connector.getConnection(function (err, connection) {
-            if (err) {
-                console.log(err);
-            } else {
-                connection.query(queryStr, function (err, rows) {
-                    connection.release();
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        res.status(200).json({"items": rows})
-                    }
-                })
-            }
-        })
-    } else {
-        res.status(404).send("Please use api/klant/login/USERNAME")
-    }
-});
 
 //change balance feature
 router.put('/id=:customerid?/saldo=:amount?&datum=:date?', function (req, res) {
@@ -86,20 +46,13 @@ router.put('/id=:customerid?/saldo=:amount?&datum=:date?', function (req, res) {
 
     var queryStr = "UPDATE klant SET Saldo = '" + amount + "', TimeLog = '" + date + "' WHERE KlantId=" + customerid;
 
-    connector.getConnection(function (err, connection) {
-        if (err) {
-            console.log(err);
-        } else {
-            connection.query(queryStr, function (err, rows) {
-                connection.release();
+            connector.query(queryStr, function (err, rows) {
                 if (err) {
                     console.log(err);
                 } else {
                     res.send('UPDATED!')
                 }
             })
-        }
-    })
 });
 
 //change password feature
@@ -109,20 +62,13 @@ router.put('/id=:customerid?/wachtwoord=:password?', function (req, res) {
 
     var queryStr = "UPDATE klant SET Wachtwoord = '" + password + "' WHERE KlantId=" + customerid;
 
-    connector.getConnection(function (err, connection) {
-        if (err) {
-            console.log(err);
-        } else {
-            connection.query(queryStr, function (err, rows) {
-                connection.release();
+            connector.query(queryStr, function (err, rows) {
                 if (err) {
                     console.log(err);
                 } else {
                     res.send('UPDATED!')
                 }
             })
-        }
-    })
 });
 
 //change emailadress feature
@@ -132,20 +78,13 @@ router.put('/id=:customerid?/email=:emailadress?', function (req, res) {
 
     var queryStr = "UPDATE klant SET Email = '" + emailadress + "' WHERE KlantId=" + customerid;
 
-    connector.getConnection(function (err, connection) {
-        if (err) {
-            console.log(err);
-        } else {
-            connection.query(queryStr, function (err, rows) {
-                connection.release();
+            connector.query(queryStr, function (err, rows) {
                 if (err) {
                     console.log(err);
                 } else {
                     res.send('UPDATED!')
                 }
             })
-        }
-    })
 });
 
 //change bank account number feature
@@ -155,11 +94,7 @@ router.put('/id=:customerid?/bank=:bankrekening?', function (req, res) {
 
     var queryStr = "UPDATE klant SET Bankrekeningnummer = '" + bankrekening + "' WHERE KlantId=" + customerid;
 
-    connector.getConnection(function (err, connection) {
-        if (err) {
-            console.log(err);
-        } else {
-            connection.query(queryStr, function (err, rows) {
+            connector.query(queryStr, function (err, rows) {
                 connection.release();
                 if (err) {
                     console.log(err);
@@ -167,8 +102,6 @@ router.put('/id=:customerid?/bank=:bankrekening?', function (req, res) {
                     res.send('UPDATED!')
                 }
             })
-        }
-    })
 });
 
 //sign up customer feature (create account)
@@ -200,20 +133,13 @@ router.put('/signup/:firstname/:lastname/:username/:password/:email?/:banknumber
         query = "INSERT INTO Klant VALUES('NULL', '" + username + "', '" + password + "', '" + email + "', '" + firstname + "', '" + lastname + "', '" + banknumber + "', 0, NOW());"
     }
 
-    connector.getConnection(function (err, connection) {
-        if (err) {
-            console.log(err);
-        } else {
-            connection.query(query, function (err, rows) {
-                connection.release();
+            connector.query(query, function (err, rows) {
                 if (err) {
                     console.log(err);
                 } else {
                     res.send('NEW CUSTOMER CREATED!')
                 }
             })
-        }
-    })
 });
 
 //delete feature
@@ -224,20 +150,13 @@ router.delete('/delete/:id?', function (req, res) {
     if (id) {
         queryStr = "DELETE from klant WHERE `KlantId` = '" + id + "'";
 
-        connector.getConnection(function (err, connection) {
-            if (err) {
-                console.log(err);
-            } else {
-                connection.query(queryStr, function (err, rows) {
-                    connection.release();
+                connector.query(queryStr, function (err, rows) {
                     if (err) {
                         console.log(err);
                     } else {
                         res.status(200).send('DELETED')
                     }
                 })
-            }
-        })
     } else {
         res.status(404).send("CANT DELETE")
     }
