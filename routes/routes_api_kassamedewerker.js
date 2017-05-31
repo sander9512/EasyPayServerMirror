@@ -125,7 +125,7 @@ router.get('/getcustomer/:customerid?', function (req, res) {
     var queryStr;
 
     if (cid) {
-        queryStr = "SELECT voornaam, achternaam, KlantId FROM klant WHERE KlantId=" + cid + ";";
+        queryStr = "SELECT saldo, achternaam, KlantId FROM klant WHERE KlantId=" + cid + ";";
 
         connector.getConnection(function (err, connection) {
             if (err) {
