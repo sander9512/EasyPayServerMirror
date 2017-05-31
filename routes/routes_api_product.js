@@ -14,6 +14,7 @@ router.get('/food', function(req, res) {
             console.log(err);
         }else {
             connection.query(queryStr, function (err, rows) {
+                connection.release;
                 if (err){
                     console.log(err)
                 }else{
@@ -32,6 +33,7 @@ router.get('/drank', function(req, res) {
             console.log(err);
         }else {
             connection.query(queryStr, function (err, rows) {
+                connection.release;
                 if (err){
                     console.log(err)
                 }else{
@@ -50,6 +52,7 @@ router.get('/frisdrank', function(req, res) {
             console.log(err);
         }else {
             connection.query(queryStr, function (err, rows) {
+                connection.release;
                 if (err){
                     console.log(err)
                 }else{
@@ -92,6 +95,7 @@ router.get('*', function(req, res) {
             console.log(err);
         }else {
             connection.query(queryStr, function (err, rows) {
+                connection.release;
                 if (err){
                     console.log(err)
                 }else{
