@@ -9,6 +9,7 @@ router.get('/', function (req, res) {
     query = "SELECT * FROM `assortiment`"
 
             connector.query(query, function (err, rows) {
+                connector.release;
                 if (err) {
                     console.log(err);
                 } else {
