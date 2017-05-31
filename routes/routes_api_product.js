@@ -57,29 +57,29 @@ router.get('/frisdrank', function(req, res) {
     });
 });
 
-router.put('/addproduct/:productName/:productPrice/:category', function (req, res) {
-
-    var productName     = req.body.productName;
-    var productPrice    = req.body.productPrice;
-    var category        = req.body.category;
-
-    var queryAddProduct = 'INSERT INTO product VALUES (' + productName + ',' + productPrice + ',' + category + ',NULL)';
-
-    connector.getConnection(function (err, connection) {
-        if (err) {
-            console.log(err);
-        } else {
-            connection.query(queryAddProduct, function (err, rows) {
-                connection.release();
-                if (err) {
-                    console.log(err);
-                } else {
-                    res.send('NEW PRODUCT CREATED!')
-                }
-            })
-        }
-    })
-});
+// router.put('/addproduct/:productName/:productPrice/:category', function (req, res) {
+//
+//     var productName     = req.body.productName;
+//     var productPrice    = req.body.productPrice;
+//     var category        = req.body.category;
+//
+//     var queryAddProduct = 'INSERT INTO product VALUES (' + productName + ',' + productPrice + ',' + category + ',NULL)';
+//
+//     connector.getConnection(function (err, connection) {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             connection.query(queryAddProduct, function (err, rows) {
+//                 connection.release();
+//                 if (err) {
+//                     console.log(err);
+//                 } else {
+//                     res.send('NEW PRODUCT CREATED!')
+//                 }
+//             })
+//         }
+//     })
+// });
 
 router.get('*', function(req, res) {
     var queryStr = 'SELECT * from product'
