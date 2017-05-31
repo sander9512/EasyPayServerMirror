@@ -63,7 +63,7 @@ router.get('/frisdrank', function(req, res) {
     });
 });
 
-router.route('/addproduct/:productName/:productPrice/:category').post(function (req, res) {
+router.route('/addproduct/:productName/:productPrice/:category').put(function (req, res) {
 
     var productName     = req.params.productName || '';
     var productPrice    = req.params.productPrice || '';
