@@ -50,8 +50,7 @@ router.get('/frisdrank', function(req, res) {
                 if (err){
                     console.log(err)
                 }else{
-                    res.status(200).json({"items" : rows});
-                    res.send('TESTEN!');
+                    res.status(200).json({"items" : rows})
                 }
             });
         }
@@ -60,11 +59,11 @@ router.get('/frisdrank', function(req, res) {
 
 router.put('/addproduct/:productName/:productPrice/:category', function (req, res) {
 
-    var productName     = req.params.productName;
-    var productPrice    = req.params.productPrice;
-    var category        = req.params.category;
+    var productName     = req.body.productName;
+    var productPrice    = req.body.productPrice;
+    var category        = req.body.category;
 
-    var queryAddProduct = 'INSERT INTO product (ProductNaam, Prijs, Categorie) VALUES (' + productName + ',' + productPrice + ',' + category + ')';
+    var queryAddProduct = 'INSERT INTO product VALUES (' + productName + ',' + productPrice + ',' + category + ',NULL)';
 
     connector.getConnection(function (err, connection) {
         if (err) {
@@ -80,7 +79,6 @@ router.put('/addproduct/:productName/:productPrice/:category', function (req, re
             })
         }
     })
-
 });
 
 router.get('*', function(req, res) {
