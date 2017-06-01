@@ -80,12 +80,12 @@ router.put('/new/:klantId/:productId/:bestellingNummer', function(req, res) {
     })
 });
 
-
 //update a specific order (with ordernnumer given as params) to status 'PAID'
-router.put('/update/:orderNumber', function (req, res) {
+router.put('/update/:orderNumber/:status', function (req, res) {
 
     var orderNumber = req.params.orderNumber;
-    var query = "UPDATE bestelling SET Status = 'PAID' WHERE BestellingNummer = " + orderNumber + ";";
+    var status = req.params.status;
+    var query = "UPDATE bestelling SET Status = '" + status + "' WHERE BestellingNummer = " + orderNumber + ";";
 
     connector.getConnection(function (err, connection) {
         if (err) {
