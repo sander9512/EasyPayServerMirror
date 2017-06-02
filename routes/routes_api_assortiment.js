@@ -24,5 +24,25 @@ router.get('/', function (req, res) {
     })
 });
 
+router.get('/location/:locationid?', function (req, res) {
+
+    var locationid = req.params.locationid;
+    var query = "SELECT * FROM assortiment WHERE LocatieID = '" + locationid + "';";
+
+    connector.getConnection(function (err, connection) {
+        if (err) {
+            console.log(err);
+        } else {
+            connection.query(query, function (err, rows) {
+                connection.release();
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.status(200).json({"items": rows})
+                }
+            })
+        }
+    })
+});
 
 module.exports = router;
