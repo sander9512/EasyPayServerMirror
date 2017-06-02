@@ -109,6 +109,28 @@ router.get('/:productid?', function(req, res) {
     });
 });
 
+router.get('/:productid?/:category?', function(req, res) {
+
+    var productId     = req.params.productid || '';
+    var category        = req.params.category || '';
+
+    var queryStr = "SELECT * from product WHERE Categorie = '" + category +"' AND ProductId = '" + productId + "';";
+
+    connector.getConnection( function (err, connection) {
+        if(err){
+            console.log(err);
+        }else {
+            connection.query(queryStr, function (err, rows) {
+                connection.release();
+                if (err){
+                    console.log(err)
+                }else{
+                    res.status(200).json({"items" : rows});
+                }
+            });
+        }
+    });
+});
 
 router.get('*', function(req, res) {
     var queryStr = 'SELECT * from product'
