@@ -31,6 +31,28 @@ router.get('/:orderNumber?', function (req, res) {
     })
 });
 
+router.get('/klant/:klantid?', function (req,res) {
+
+    var klantID = req.params.klantid;
+    var query = "SELECT * FROM bestelling WHERE `KlantId` = '" + klantID + "';";
+
+    connector.getConnection(function (err, connection) {
+        if(err){
+            console.log(err);
+        } else{
+            connection.query(query, function (err, rows){
+                connection.release;
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.status(200).json({"ïtems" : rows})
+                }
+            })
+        }
+    })
+
+});
+
 //check for the first available 'bestellingNummer'. This is used to create a new unique order
 router.get('/check/available/ordernumber', function(req, res) {
 
