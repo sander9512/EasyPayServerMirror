@@ -243,4 +243,28 @@ router.delete('/delete/:id?', function (req, res) {
     }
 });
 
+//default endpoint to update balance from customers
+router.put('/afrekening/:klantId/:klantSaldo', function (req, res) {
+
+    var klantId     = req.params.klantId || '';
+    var klantSaldo  = req.params.klantSaldo || '';
+
+    var queryStr = 'UPDATE Klant SET Saldo = ' + klantSaldo + ' WHERE KlantId =' + klantId + ';';
+
+    connector.getConnection(function (err, connection) {
+        if (err) {
+            console.log(err);
+        } else {
+            connection.query(queryStr, function (err, rows) {
+                connection.release();
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.send('BALANCE UPDATED!')
+                }
+            })
+        }
+    })
+});
+
 module.exports = router;
