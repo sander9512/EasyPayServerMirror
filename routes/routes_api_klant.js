@@ -244,12 +244,12 @@ router.delete('/delete/:id?', function (req, res) {
 });
 
 //default endpoint to update balance from customers
-router.put('/afrekening/:klantId/:klantSaldo', function (req, res) {
+router.put('/afrekening/:klantId/:orderPrice', function (req, res) {
 
     var klantId     = req.params.klantId || '';
-    var klantSaldo  = req.params.klantSaldo || '';
+    var orderPrice  = req.params.orderPrice || '';
 
-    var queryStr = 'UPDATE Klant SET Saldo = ' + klantSaldo + ' WHERE KlantId =' + klantId + ';';
+    var queryStr = 'UPDATE Klant SET Saldo = saldo -' + orderPrice + ' WHERE KlantId =' + klantId + ';';
 
     connector.getConnection(function (err, connection) {
         if (err) {
