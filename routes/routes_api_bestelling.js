@@ -32,7 +32,7 @@ router.get('/:orderNumber?', function (req, res) {
 });
 
 //check for the first available 'bestellingNummer'. This is used to create a new unique order
-router.get('/check/available/ordernumber', function(req, res) {
+router.get('/check/available/ordernumber', function (req, res) {
 
     var query = "SELECT (bestellingNummer +1) AS nextAvailableOrderNumber FROM bestelling ORDER BY bestellingNummer DESC LIMIT 1";
 
@@ -53,7 +53,7 @@ router.get('/check/available/ordernumber', function(req, res) {
 });
 
 //create new order feature
-router.put('/new/:klantId/:productId/:bestellingNummer', function(req, res) {
+router.put('/new/:klantId/:productId/:bestellingNummer', function (req, res) {
 
 
     var klantId = req.params.klantId;
@@ -62,13 +62,13 @@ router.put('/new/:klantId/:productId/:bestellingNummer', function(req, res) {
     // var prijs = req.params.prijs;
     var bestellingNummer = req.params.bestellingNummer;
 
-    var query = "INSERT INTO bestelling VALUES (NULL, "+klantId+", "+productId+", 'WAITING', "+bestellingNummer+");";
+    var query = "INSERT INTO bestelling VALUES (NULL, " + klantId + ", " + productId + ", 'WAITING', " + bestellingNummer + ");";
 
-    connector.getConnection(function(err, connection) {
+    connector.getConnection(function (err, connection) {
         if (err) {
             console.log(err);
         } else {
-            connection.query(query, function(err, rows) {
+            connection.query(query, function (err, rows) {
                 connection.release();
                 if (err) {
                     console.log(err);
@@ -86,6 +86,41 @@ router.put('/update/:orderNumber/:status', function (req, res) {
     var orderNumber = req.params.orderNumber;
     var status = req.params.status;
     var query = "UPDATE bestelling SET Status = '" + status + "' WHERE BestellingNummer = " + orderNumber + ";";
+
+    connector.getConnection(function (err, connection) {
+        if (err) {
+            console.log(err);
+        } else {
+            connection.query(query, function (err, rows) {
+                connection.release();
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.status(200).json({"items": rows})
+                }
+            })
+        }
+    })
+});
+
+//create a new order
+router.post('/create/:customerId/:productId/:status/:orderNumber/:date/:locationId', function (req, res) {
+
+    var customerId = req.params.customerId;
+    var productId = req.params.productId;
+    var status = req.params.status;
+    var orderNumber = req.params.orderNumber;
+    var date = req.params.date;
+    var locationId = req.params.locationId;
+    var query = "INSERT INTO bestelling " +
+        "VALUES (" +
+        null + ", " +
+        customerId + ", " +
+        productId + ", '" +
+        status + "', " +
+        orderNumber + ", '" +
+        date + "', " +
+        locationId + ");";
 
     connector.getConnection(function (err, connection) {
         if (err) {
