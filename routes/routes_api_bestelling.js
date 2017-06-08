@@ -114,7 +114,7 @@ router.post('/create/:customerId/:productId/:status/:orderNumber/:date/:location
     var locationId = req.params.locationId;
     var query = "INSERT INTO bestelling " +
         "VALUES (" +
-        null + ", " +
+        0 + ", " +
         customerId + ", " +
         productId + ", '" +
         status + "', " +
