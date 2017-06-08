@@ -126,7 +126,7 @@ router.put('/update/:orderNumber/:status', function (req, res) {
 });
 
 //create a new order
-router.put('/create/:customerId/:productId/:status/:orderNumber/:date/:locationId', function (req, res) {
+router.post('/create/:customerId/:productId/:status/:orderNumber/:date/:locationId', function (req, res) {
 
     var customerId = req.params.customerId;
     var productId = req.params.productId;
