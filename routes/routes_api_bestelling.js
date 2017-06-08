@@ -126,13 +126,13 @@ router.put('/update/:orderNumber/:status', function (req, res) {
 });
 
 //create a new order
-router.post('/create/:customerId/:productId/:status/:orderNumber/:date/:locationId', function (req, res) {
+router.post('/create/:customerId/:productId/:status/:orderNumber/:locationId', function (req, res) {
 
     var customerId = req.params.customerId;
     var productId = req.params.productId;
     var status = req.params.status;
     var orderNumber = req.params.orderNumber;
-    var date = req.params.date;
+    // var date = req.params.date;
     var locationId = req.params.locationId;
     var query = "INSERT INTO bestelling " +
         "VALUES (" +
