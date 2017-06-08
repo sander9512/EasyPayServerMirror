@@ -140,8 +140,8 @@ router.post('/create/:customerId/:productId/:status/:orderNumber/:date/:location
         customerId + ", " +
         productId + ", '" +
         status + "', " +
-        orderNumber + ", '" +
-        date + "', " +
+        orderNumber + ", " +
+        "NOW(), " +
         locationId + ");";
 
     connector.getConnection(function (err, connection) {
