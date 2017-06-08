@@ -45,7 +45,7 @@ router.get('/klant/:klantid?', function (req,res) {
                 if (err) {
                     console.log(err);
                 } else {
-                    res.status(200).json({"ïtems" : rows})
+                    res.status(200).json({"items" : rows})
                 }
             })
         }
