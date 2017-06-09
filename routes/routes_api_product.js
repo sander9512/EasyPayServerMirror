@@ -89,7 +89,7 @@ router.route('/addproduct/:productName/:productPrice/:category').delete(function
 
 router.route('/delproduct/:productId').put(function (req, res) {
 
-    var productId     = req.params.productId || '';
+    var productId = req.params.productId || '';
 
     var queryDelProduct = 'DELETE FROM product WHERE `product`.`ProductId` = ' + productId + ';'
 
@@ -107,6 +107,51 @@ router.route('/delproduct/:productId').put(function (req, res) {
             })
         }
     })
+});
+
+router.get('/:productid?', function(req, res) {
+
+    var productID = req.params.productid;
+
+    var queryStr = "SELECT * FROM product WHERE `ProductId` = '" + productID + "';";
+
+    connector.getConnection( function (err, connection) {
+        if(err){
+            console.log(err);
+        }else {
+            connection.query(queryStr, function (err, rows) {
+                connection.release();
+                if (err){
+                    console.log(err)
+                }else{
+                    res.status(200).json({"items" : rows});
+                }
+            });
+        }
+    });
+});
+
+router.get('/:productid?/:category?', function(req, res) {
+
+    var productId     = req.params.productid || '';
+    var category        = req.params.category || '';
+
+    var queryStr = "SELECT * from product WHERE Categorie = '" + category +"' AND ProductId = '" + productId + "';";
+
+    connector.getConnection( function (err, connection) {
+        if(err){
+            console.log(err);
+        }else {
+            connection.query(queryStr, function (err, rows) {
+                connection.release();
+                if (err){
+                    console.log(err)
+                }else{
+                    res.status(200).json({"items" : rows});
+                }
+            });
+        }
+    });
 });
 
 router.get('*', function(req, res) {
