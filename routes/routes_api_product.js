@@ -63,7 +63,7 @@ router.get('/frisdrank', function(req, res) {
     });
 });
 
-router.route('/addproduct/:productName/:productPrice/:category').put(function (req, res) {
+router.route('/addproduct/:productName/:productPrice/:category').delete(function (req, res) {
 
     var productName     = req.params.productName || '';
     var productPrice    = req.params.productPrice || '';
@@ -81,6 +81,28 @@ router.route('/addproduct/:productName/:productPrice/:category').put(function (r
                     console.log(err);
                 } else {
                     res.send('NEW PRODUCT CREATED!')
+                }
+            })
+        }
+    })
+});
+
+router.route('/delproduct/:productId').put(function (req, res) {
+
+    var productId     = req.params.productId || '';
+
+    var queryDelProduct = 'DELETE FROM product WHERE `product`.`ProductId` = ' + productId + ';'
+
+    connector.getConnection(function (err, connection) {
+        if (err) {
+            console.log(err);
+        } else {
+            connection.query(queryDelProduct, function (err, rows) {
+                connection.release();
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.send('PRODUCT REMOVED!')
                 }
             })
         }
