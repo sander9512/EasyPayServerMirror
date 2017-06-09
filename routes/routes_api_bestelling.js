@@ -160,4 +160,27 @@ router.put('/create/:customerId/:productId/:status/:orderNumber/:locationId', fu
     })
 });
 
+//delete an existing order
+router.delete('/delete/:orderNumber', function (req, res) {
+
+    var orderNumber = req.params.orderNumber;
+    var query = "DELETE FROM bestelling WHERE bestellingnummer = " + orderNumber + ";";
+    connector.getConnection(function (err, connection) {
+        if (err) {
+            console.log(err);
+        } else {
+            connection.query(query, function (err, rows) {
+                connection.release();
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.status(200).json({"items": rows})
+                }
+            })
+        }
+    })
+});
+
+
+
 module.exports = router;
