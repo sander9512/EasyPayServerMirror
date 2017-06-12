@@ -91,7 +91,7 @@ router.route('/delproduct/:productId').delete(function (req, res) {
 
     var productId = req.params.productId || '';
 
-    var queryDelProduct = 'DELETE FROM product WHERE `product`.`ProductId` = ' + productId + ';'
+    var queryDelProduct = 'UPDATE product SET Active = 0 WHERE ProductId = ' + productId + ';'
 
     connector.getConnection(function (err, connection) {
         if (err) {
