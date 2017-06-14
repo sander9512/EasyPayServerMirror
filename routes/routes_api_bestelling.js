@@ -10,7 +10,7 @@ router.get('/:orderNumber?', function (req, res) {
     var query = "";
 
     if (orderNumber) {
-        query = "SELECT * from bestelling WHERE `bestellingNummer` = '" + orderNumber + "';";
+        query = "SELECT * from bestelling WHERE `bestellingNummer` = '" + orderNumber + "' ORDER BY BestellingNummer DESC;";
     } else {
         query = 'SELECT * from bestelling ORDER BY BestellingNummer DESC ';
     }
