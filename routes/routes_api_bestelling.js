@@ -30,7 +30,7 @@ router.get('/:orderNumber?', function (req, res) {
         }
     })
 });
-router.get('/:locatieid', function (req, res) {
+router.get('/location/:locatieid', function (req, res) {
     var locatie = req.params.locatieid || '';
     var queryStr;
 
