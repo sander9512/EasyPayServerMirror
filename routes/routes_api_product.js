@@ -7,7 +7,7 @@ var bodyParser      = require('body-parser');
 router.use(bodyParser.json());
 
 router.get('/food', function(req, res) {
-    var queryStr = 'SELECT * from product WHERE Categorie = "Eten"'
+    var queryStr = 'SELECT * from product WHERE Categorie = "Eten" AND Active = 1'
 
     connector.getConnection( function (err, connection) {
         if(err){
@@ -26,7 +26,7 @@ router.get('/food', function(req, res) {
 });
 
 router.get('/drank', function(req, res) {
-    var queryStr = 'SELECT * from product WHERE Categorie = "Drank"'
+    var queryStr = 'SELECT * from product WHERE Categorie = "Drank" AND Active = 1'
 
     connector.getConnection( function (err, connection) {
         if(err){
@@ -45,7 +45,7 @@ router.get('/drank', function(req, res) {
 });
 
 router.get('/frisdrank', function(req, res) {
-    var queryStr = 'SELECT * from product WHERE Categorie = "Frisdrank"'
+    var queryStr = 'SELECT * from product WHERE Categorie = "Frisdrank" AND Active = 1'
 
     connector.getConnection( function (err, connection) {
         if(err){
@@ -87,6 +87,28 @@ router.route('/addproduct/:productName/:productPrice/:category').put(function (r
     })
 });
 
+router.route('/delproduct/:productId').delete(function (req, res) {
+
+    var productId = req.params.productId || '';
+
+    var queryDelProduct = 'UPDATE product SET Active = 0 WHERE ProductId = ' + productId + ';'
+
+    connector.getConnection(function (err, connection) {
+        if (err) {
+            console.log(err);
+        } else {
+            connection.query(queryDelProduct, function (err, rows) {
+                connection.release();
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.send('PRODUCT REMOVED!')
+                }
+            })
+        }
+    })
+});
+
 router.get('/:productid?', function(req, res) {
 
     var productID = req.params.productid;
@@ -114,7 +136,7 @@ router.get('/:productid?/:category?', function(req, res) {
     var productId     = req.params.productid || '';
     var category        = req.params.category || '';
 
-    var queryStr = "SELECT * from product WHERE Categorie = '" + category +"' AND ProductId = '" + productId + "';";
+    var queryStr = "SELECT * from product WHERE Categorie = '" + category +"' AND ProductId = '" + productId + "' AND Active = 1;";
 
     connector.getConnection( function (err, connection) {
         if(err){
