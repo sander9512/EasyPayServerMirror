@@ -30,6 +30,29 @@ router.get('/:orderNumber?', function (req, res) {
         }
     })
 });
+router.get('/location/:locatieid', function (req, res) {
+    var locatie = req.params.locatieid || '';
+    var queryStr;
+
+    if (locatie) {
+        queryStr = "SELECT * FROM bestelling WHERE locatieId = '" + locatie + "'";
+
+        connector.getConnection(function (err, connection) {
+            if (err) {
+                console.log(err);
+            } else {
+                connection.query(queryStr, function (err, rows) {
+                    connection.release();
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        res.status(200).json({"items": rows})
+                    }
+                })
+            }
+        })
+    }
+});
 
 router.get('/klant/:klantid?', function (req,res) {
 
