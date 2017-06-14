@@ -30,7 +30,7 @@ router.get('/login/:username?', function (req, res) {
     var queryStr;
 
     if (username) {
-        queryStr = "SELECT * from klant WHERE `Gebruikersnaam` = '" + username + "'"
+        queryStr = "SELECT * from klant WHERE `Gebruikersnaam` = '" + username + "'";
 
         connector.getConnection(function (err, connection) {
             if (err) {
