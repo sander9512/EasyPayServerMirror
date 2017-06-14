@@ -35,7 +35,7 @@ router.get('/location/:locatieid', function (req, res) {
     var queryStr;
 
     if (locatie) {
-        queryStr = "SELECT * FROM bestelling WHERE locatieId = '" + locatie + "'";
+        queryStr = "SELECT * FROM bestelling WHERE locatieId = '" + locatie + "' ORDER BY bestellingNummer DESC";
 
         connector.getConnection(function (err, connection) {
             if (err) {
