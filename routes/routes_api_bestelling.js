@@ -12,7 +12,7 @@ router.get('/:orderNumber?', function (req, res) {
     if (orderNumber) {
         query = "SELECT * from bestelling WHERE `bestellingNummer` = '" + orderNumber + "';";
     } else {
-        query = 'SELECT * from bestelling ORDER BY Bestelnummer DESC ';
+        query = 'SELECT * from bestelling ORDER BY BestellingNummer DESC ';
     }
 
     connector.getConnection(function (err, connection) {
