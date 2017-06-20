@@ -69,7 +69,7 @@ router.route('/addproduct/:productName/:productPrice/:category').put(function (r
     var productPrice    = req.params.productPrice || '';
     var category        = req.params.category || '';
 
-    var queryAddProduct = 'INSERT INTO product VALUES (NULL,"' + productName + '",' + productPrice + ',"' + category + '","")';
+    var queryAddProduct = 'INSERT INTO product VALUES (NULL,"' + productName + '",' + productPrice + ',"' + category + '", "", 1)';
 
     connector.getConnection(function (err, connection) {
         if (err) {
