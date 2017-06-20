@@ -11,9 +11,9 @@ router.put('/add_error/:deviceSDK?/:device?/:model?/:product?/:error?', function
     var product = req.params.product || '';
     var error  = req.params.error || '';
 
-    connection.query('INSERT INTO error_data(deviceSDK,device,model,product,error) VALUES( "' + [deviceSDK] + '","' + [device] + '","' + [model] + '","' + [product] + '","' + [error] + '");',
+    connector.query('INSERT INTO error_data(deviceSDK,device,model,product,error) VALUES( "' + [deviceSDK] + '","' + [device] + '","' + [model] + '","' + [product] + '","' + [error] + '");',
         function (error, rows, fields) {
-            connection.release;
+            connector.release;
             if (error) {
                 res.status(400).json(error);
             } else {
