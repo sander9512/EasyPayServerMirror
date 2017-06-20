@@ -154,6 +154,29 @@ router.get('/:productid?/:category?', function(req, res) {
     });
 });
 
+router.get('/view/:category/:locationId', function(req, res) {
+
+    var locationId     = req.params.locationId || '';
+    var category        = req.params.category || '';
+
+    var queryStr = "SELECT * from view_products_per_location WHERE Categorie = '" + category +"' AND LocatieID = '" + locationId + "' AND Active = 1;";
+
+    connector.getConnection( function (err, connection) {
+        if(err){
+            console.log(err);
+        }else {
+            connection.query(queryStr, function (err, rows) {
+                connection.release();
+                if (err){
+                    console.log(err)
+                }else{
+                    res.status(200).json({"items" : rows});
+                }
+            });
+        }
+    });
+});
+
 router.get('*', function(req, res) {
     var queryStr = 'SELECT * from product'
 
