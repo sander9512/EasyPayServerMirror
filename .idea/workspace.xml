@@ -2,148 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="973e5f68-8d84-4b5b-b164-f7738a40f70b" name="Default" comment="Added the first tests">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/api_assortiment_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/api_error_test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/.bin/_mocha" afterPath="$PROJECT_DIR$/node_modules/.bin/_mocha" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/.bin/mocha" afterPath="$PROJECT_DIR$/node_modules/.bin/mocha" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/balanced-match/.npmignore" afterPath="$PROJECT_DIR$/node_modules/balanced-match/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/balanced-match/LICENSE.md" afterPath="$PROJECT_DIR$/node_modules/balanced-match/LICENSE.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/balanced-match/README.md" afterPath="$PROJECT_DIR$/node_modules/balanced-match/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/balanced-match/index.js" afterPath="$PROJECT_DIR$/node_modules/balanced-match/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/balanced-match/package.json" afterPath="$PROJECT_DIR$/node_modules/balanced-match/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/brace-expansion/README.md" afterPath="$PROJECT_DIR$/node_modules/brace-expansion/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/brace-expansion/index.js" afterPath="$PROJECT_DIR$/node_modules/brace-expansion/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/brace-expansion/package.json" afterPath="$PROJECT_DIR$/node_modules/brace-expansion/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai-http/History.md" afterPath="$PROJECT_DIR$/node_modules/chai-http/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai-http/dist/chai-http.js" afterPath="$PROJECT_DIR$/node_modules/chai-http/dist/chai-http.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai-http/index.js" afterPath="$PROJECT_DIR$/node_modules/chai-http/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai-http/lib/http.js" afterPath="$PROJECT_DIR$/node_modules/chai-http/lib/http.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai-http/lib/net.js" afterPath="$PROJECT_DIR$/node_modules/chai-http/lib/net.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai-http/lib/request.js" afterPath="$PROJECT_DIR$/node_modules/chai-http/lib/request.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai-http/package.json" afterPath="$PROJECT_DIR$/node_modules/chai-http/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/.npmignore" afterPath="$PROJECT_DIR$/node_modules/chai/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/CODE_OF_CONDUCT.md" afterPath="$PROJECT_DIR$/node_modules/chai/CODE_OF_CONDUCT.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/node_modules/chai/CONTRIBUTING.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/History.md" afterPath="$PROJECT_DIR$/node_modules/chai/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/README.md" afterPath="$PROJECT_DIR$/node_modules/chai/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/ReleaseNotes.md" afterPath="$PROJECT_DIR$/node_modules/chai/ReleaseNotes.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/bower.json" afterPath="$PROJECT_DIR$/node_modules/chai/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/chai.js" afterPath="$PROJECT_DIR$/node_modules/chai/chai.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/index.js" afterPath="$PROJECT_DIR$/node_modules/chai/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/karma.conf.js" afterPath="$PROJECT_DIR$/node_modules/chai/karma.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/karma.sauce.js" afterPath="$PROJECT_DIR$/node_modules/chai/karma.sauce.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/assertion.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/assertion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/config.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/core/assertions.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/core/assertions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/interface/assert.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/interface/assert.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/interface/expect.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/interface/expect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/interface/should.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/interface/should.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/addChainableMethod.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/addChainableMethod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/addMethod.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/addMethod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/addProperty.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/addProperty.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/expectTypes.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/expectTypes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/flag.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/flag.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getActual.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getActual.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getEnumerableProperties.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getEnumerableProperties.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getMessage.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getMessage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getName.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getName.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getPathInfo.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getPathInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getPathValue.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getPathValue.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getProperties.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getProperties.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/hasProperty.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/hasProperty.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/index.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/inspect.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/inspect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/objDisplay.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/objDisplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/overwriteChainableMethod.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/overwriteChainableMethod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/overwriteMethod.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/overwriteMethod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/overwriteProperty.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/overwriteProperty.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/test.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/transferFlags.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/transferFlags.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/package.json" afterPath="$PROJECT_DIR$/node_modules/chai/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/sauce.browsers.js" afterPath="$PROJECT_DIR$/node_modules/chai/sauce.browsers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/mocha/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mocha/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/README.md" afterPath="$PROJECT_DIR$/node_modules/mocha/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/bin/_mocha" afterPath="$PROJECT_DIR$/node_modules/mocha/bin/_mocha" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/bin/mocha" afterPath="$PROJECT_DIR$/node_modules/mocha/bin/mocha" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/bin/options.js" afterPath="$PROJECT_DIR$/node_modules/mocha/bin/options.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/bower.json" afterPath="$PROJECT_DIR$/node_modules/mocha/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/browser-entry.js" afterPath="$PROJECT_DIR$/node_modules/mocha/browser-entry.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/index.js" afterPath="$PROJECT_DIR$/node_modules/mocha/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/browser/debug.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/browser/debug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/browser/events.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/browser/events.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/browser/progress.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/browser/progress.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/browser/tty.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/browser/tty.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/context.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/context.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/hook.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/hook.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/interfaces/bdd.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/interfaces/bdd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/interfaces/common.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/interfaces/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/interfaces/exports.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/interfaces/exports.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/interfaces/index.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/interfaces/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/interfaces/qunit.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/interfaces/qunit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/interfaces/tdd.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/interfaces/tdd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/mocha.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/mocha.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/ms.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/ms.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/pending.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/pending.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/base.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/doc.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/doc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/dot.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/dot.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/html.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/html.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/index.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/json-stream.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/json-stream.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/json.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/json.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/landing.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/landing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/list.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/markdown.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/markdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/min.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/nyan.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/nyan.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/progress.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/progress.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/spec.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/tap.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/tap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/xunit.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/reporters/xunit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/runnable.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/runnable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/runner.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/runner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/suite.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/suite.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/template.html" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/test.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/to-iso-string/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/to-iso-string/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/to-iso-string/index.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/to-iso-string/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/lib/utils.js" afterPath="$PROJECT_DIR$/node_modules/mocha/lib/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/mocha.css" afterPath="$PROJECT_DIR$/node_modules/mocha/mocha.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/mocha.js" afterPath="$PROJECT_DIR$/node_modules/mocha/mocha.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/package.json" afterPath="$PROJECT_DIR$/node_modules/mocha/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/.npmignore" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/CONTRIBUTING.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/GOVERNANCE.md" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/GOVERNANCE.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/LICENSE" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/README.md" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/duplex-browser.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/duplex-browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/duplex.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/duplex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/_stream_duplex.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/_stream_duplex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/_stream_passthrough.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/_stream_passthrough.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/_stream_readable.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/_stream_readable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/_stream_transform.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/_stream_transform.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/_stream_writable.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/_stream_writable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/internal/streams/BufferList.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/internal/streams/BufferList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/internal/streams/stream-browser.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/internal/streams/stream-browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/internal/streams/stream.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/lib/internal/streams/stream.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/passthrough.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/passthrough.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/readable-browser.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/readable-browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/readable.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/readable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/transform.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/transform.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/writable-browser.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/writable-browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/writable.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/readable-stream/writable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/string_decoder/.npmignore" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/string_decoder/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/string_decoder/LICENSE" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/string_decoder/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/string_decoder/README.md" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/string_decoder/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/string_decoder/lib/string_decoder.js" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/string_decoder/lib/string_decoder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/string_decoder/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/api_assortiment_test.js" afterPath="$PROJECT_DIR$/tests/api_assortiment_test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/api_error_test.js" afterPath="$PROJECT_DIR$/tests/api_error_test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -159,28 +19,28 @@
       <file leaf-file-name="api_error_test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/api_error_test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="72" column="42" lean-forward="false" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
+            <state relative-caret-position="-79">
+              <caret line="44" column="49" lean-forward="false" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes_api_assortiment.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes_api_assortiment.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/routes_api_assortiment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+            <state relative-caret-position="798">
+              <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api_assortiment_test.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="api_assortiment_test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/api_assortiment_test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="131">
+              <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -231,6 +91,7 @@
         <option value="$PROJECT_DIR$/routes/routes_api_error.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/tests/api_error_test.js" />
+        <option value="$PROJECT_DIR$/tests/api_assortiment_test.js" />
       </list>
     </option>
   </component>
@@ -486,7 +347,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.add_error api_error">
+  <component name="RunManager" selected="Mocha./location/:locationid api_assortiment">
     <configuration default="false" name="add_error api_error" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -515,6 +376,36 @@
       <test-names>
         <name value="add_error api_error" />
         <name value="Should return error &quot;Not Authorised for Refreshment&quot; on GET at /api/movies/all" />
+      </test-names>
+      <method />
+    </configuration>
+    <configuration default="false" name="/ api_assortiment" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/api_assortiment_test.js</test-file>
+      <test-names>
+        <name value="/ api_assortiment" />
+      </test-names>
+      <method />
+    </configuration>
+    <configuration default="false" name="/location/:locationid api_assortiment" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/api_assortiment_test.js</test-file>
+      <test-names>
+        <name value="/location/:locationid api_assortiment" />
       </test-names>
       <method />
     </configuration>
@@ -584,14 +475,18 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Mocha.add_error api_error" />
       <item index="1" class="java.lang.String" itemvalue="Mocha.add_error api_error.Should return error &quot;Not Authorised for Refreshment&quot; on GET at /api/movies/all" />
+      <item index="2" class="java.lang.String" itemvalue="Mocha./ api_assortiment" />
+      <item index="3" class="java.lang.String" itemvalue="Mocha./location/:locationid api_assortiment" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Mocha.add_error api_error" />
-        <item index="1" class="java.lang.String" itemvalue="Mocha.add_error api_error.Should return error &quot;Not Authorised for Refreshment&quot; on GET at /api/movies/all" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Mocha./location/:locationid api_assortiment" />
+        <item index="1" class="java.lang.String" itemvalue="Mocha./ api_assortiment" />
+        <item index="2" class="java.lang.String" itemvalue="Mocha.add_error api_error" />
+        <item index="3" class="java.lang.String" itemvalue="Mocha.add_error api_error.Should return error &quot;Not Authorised for Refreshment&quot; on GET at /api/movies/all" />
       </list>
     </recent_temporary>
   </component>
@@ -666,24 +561,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="add_error_api_error - 2017.06.20 at 17h 38m 28s.xml">
-      <configuration name="add_error api_error" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="__api_assortiment - 2017.06.20 at 18h 22m 11s.xml">
+      <configuration name="/ api_assortiment" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="add_error_api_error - 2017.06.20 at 17h 46m 54s.xml">
-      <configuration name="add_error api_error" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="__api_assortiment - 2017.06.20 at 18h 30m 05s.xml">
+      <configuration name="/ api_assortiment" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="__api_assortiment - 2017.06.20 at 18h 30m 20s.xml">
+      <configuration name="/ api_assortiment" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="__api_assortiment - 2017.06.20 at 18h 30m 28s.xml">
+      <configuration name="/ api_assortiment" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="_location__locationid_api_assortiment - 2017.06.20 at 20h 17m 08s.xml">
+      <configuration name="/location/:locationid api_assortiment" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="_location__locationid_api_assortiment - 2017.06.20 at 20h 17m 48s.xml">
+      <configuration name="/location/:locationid api_assortiment" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="_location__locationid_api_assortiment - 2017.06.20 at 20h 18m 06s.xml">
+      <configuration name="/location/:locationid api_assortiment" configurationId="mocha-javascript-test-runner" />
     </history-entry>
     <history-entry file="add_error_api_error - 2017.06.20 at 17h 47m 16s.xml">
       <configuration name="add_error api_error" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="add_error_api_error_Should_return_error__Not_Authorised_for_Refreshment__on_GET_at__api_movies_all - 2017.06.20 at 17h 40m 48s.xml">
-      <configuration name="add_error api_error.Should return error &quot;Not Authorised for Refreshment&quot; on GET at /api/movies/all" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="add_error_api_error - 2017.06.20 at 18h 24m 18s.xml">
+      <configuration name="add_error api_error" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="add_error_api_error_Should_return_error__Not_Authorised_for_Refreshment__on_GET_at__api_movies_all - 2017.06.20 at 17h 41m 31s.xml">
-      <configuration name="add_error api_error.Should return error &quot;Not Authorised for Refreshment&quot; on GET at /api/movies/all" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="add_error_api_error - 2017.06.20 at 18h 25m 34s.xml">
+      <configuration name="add_error api_error" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82469000" />
+    <option name="totallyTimeSpent" value="86315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
@@ -695,7 +605,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2452381" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51309526" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22857143" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -897,14 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/superagent/lib/node/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -913,26 +815,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/api_assortiment_test.js">
+    <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="929">
+          <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/api_error_test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="72" column="42" lean-forward="false" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
+        <state relative-caret-position="-79">
+          <caret line="44" column="49" lean-forward="false" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes_api_assortiment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+        <state relative-caret-position="798">
+          <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/api_assortiment_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
           <folding />
         </state>
       </provider>
