@@ -57,14 +57,14 @@ router.get('/location/:locatieid', function (req, res) {
 router.get('/klant/:klantid?', function (req,res) {
 
     var klantID = req.params.klantid;
-    var query = "SELECT * FROM bestelling WHERE `KlantId` = '" + klantID + "';";
+    var query = "SELECT * FROM bestelling WHERE `KlantId` = '" + klantID + "' ORDER BY bestellingNummer DESC;";
 
     connector.getConnection(function (err, connection) {
         if(err){
             console.log(err);
         } else{
             connection.query(query, function (err, rows){
-                connection.release;
+                connection.release();
                 if (err) {
                     console.log(err);
                 } else {
